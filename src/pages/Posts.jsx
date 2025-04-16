@@ -1,5 +1,6 @@
 import { useEffect } from "react"
-
+import cardData from "../data/cardData";
+import CardItem from "../components/card/CardItem";
 let Posts = () => {
 
     useEffect(() => {
@@ -12,7 +13,12 @@ let Posts = () => {
     }, [])
 
     return (
-        <div>Sono Posts</div>
+        <ul className="list-group d-flex my-5">
+            {cardData.map((card)=> <CardItem
+            key = {card.id}
+            title = {card.title}
+            body = {card.body}/>)}
+        </ul>
     )
 }
 
