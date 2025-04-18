@@ -2,6 +2,8 @@ import { useEffect, useState } from "react"
 import CardItem from "../components/post/PostItem";
 import axios from "axios";
 
+
+
 let Posts = () => {
 
     const [posts, setPosts] = useState([]);
@@ -29,10 +31,14 @@ let Posts = () => {
         <ul className="list-group d-flex my-5">
             {posts.map((card)=> <CardItem
             key = {card.id}
+            id = {card.id}
             title = {card.title}
-            body = {card.body}/>)}
+            body = {card.body}/>
+            )}
         </ul>
+        
     )
 }
+
 
 export default Posts
